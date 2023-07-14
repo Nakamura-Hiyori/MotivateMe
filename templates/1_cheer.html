@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/js/LoadShow.js"></script>
+</head>
+
+<center>
+    <html>
+        <body>
+            <div class="header">
+                <!--Content before waves-->
+                <div class="inner-header">
+                    <a id="btn btn--orange btn--cubic btn--shadow" class="btn btn--orange btn--cubic btn--shadow" onclick="loadData_cheer()">データを生成する</a>
+                    <a class="btn btn--orange btn--cubic btn--shadow" onclick="showData_cheer()">データを表示する</a>
+                    <div id="loading-icon" class="loading-icon"></div>
+                    <a class="btn btn--blue btn--cubic btn--shadow" href="/">More</a>
+                    <p id="display"></p>
+                </div>
+            </div>
+        </body>
+        <style>
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        
+            .loading-icon {
+                display: none;
+            }
+        </style>
+        <script>
+            var button = document.getElementById('btn btn--orange btn--cubic btn--shadow');
+            var element = document.getElementById('loading-icon');
+
+            button.addEventListener('click', function() {
+                element.style.display = 'inline-block';
+                element.style.animation = 'spin 5s linear infinite';
+
+                setTimeout(function(){
+                    element.style.animation = 'none';
+                    element.style.display = 'none';
+                }, 3400);
+            });
+        </script>
+    </html>
+</center>
+{% endblock %}
