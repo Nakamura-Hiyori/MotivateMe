@@ -1,0 +1,4 @@
+Flask==2.2.2
+Flask-Cors==3.0.10
+Janome==0.4.2
+markovify==0.9.4
